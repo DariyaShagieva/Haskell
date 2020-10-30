@@ -1,18 +1,10 @@
 module Types.Game (
-  drawLine,
+  DrawLine,
   PlayGrid
 ) where
 
--- | Состояние игры
-data GameState = GameState
-  { boxesFirst :: Int
-    -- ^ количество квадратов первого игрока
-  , boxesSecond :: Int
-    -- ^ количество квадратов второго игрока
-  } deriving (Eq,Show,Read,Generic)
-
 -- | Возможные ходы игрока
-data drawLine =
+data DrawLine =
     Vertical Int Int    -- | соединить точки горизонтально
   | Horizontal Int Int -- | соединить точки вертикально
   deriving (Eq,Show,Read)
@@ -28,15 +20,5 @@ setBoxesFirst c gs = gs { boxesFirst = c + 1 }
  setBoxesSecond :: Int -- ^ Текущее количество квадратов
                      -> GameState   -- ^ Старое состояние игры
                      -> GameState   -- ^ Новое состояние
-setBoxesSecond c gs = gs { boxesSecond = c + 1 }
+setBoxesSecond c gs = gs { boxesSecond = c + 1
 
--- | Игровое поле
-data PlayGrid = PlayGrid [[Int]]
-deriving (Eq,Show,Read)
-
--- | Выигрыш наступает, когда все точки соединены
-
--- | Состояние игры
-data GameState = GameState
-  { grid :: PlayGrid }
-   deriving (Eq,Show,Read)
