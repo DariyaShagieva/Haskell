@@ -19,7 +19,7 @@ prob6 cl = case cl of
 -- Написать функцию, которая проверяет, что значения
 -- находятся в диапазоне от 0 до 255 (границы входят)
 prob7 :: ColorPart -> Bool
-prob7 = error "Implement me!"
+prob7 cp = prob9 cp < 255 && prob9 cp >=0
 
 ------------------------------------------------------------
 -- PROBLEM #8
@@ -35,7 +35,10 @@ prob8 = error "Implement me!"
 -- Написать функцию, которая возвращает значение из
 -- ColorPart
 prob9 :: ColorPart -> Int
-prob9 = error "Implement me!"
+prob9 cp = case cp of
+    (Red n) -> n
+    (Blue n) -> n
+    (Green n) -> n
 
 ------------------------------------------------------------
 -- PROBLEM #10

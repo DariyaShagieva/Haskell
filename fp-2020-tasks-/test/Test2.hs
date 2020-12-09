@@ -32,6 +32,7 @@ test7 :: TestTree
 test7 = testGroup "P07"
   [ testCase "prob7 (Red 300) == F" $ prob7 (Red 300) @?= False
   , testCase "prob7 (Red 10)  == T" $ prob7 (Red 10)  @?= True
+  , testCase "prob7 (Red -1)  == F" $ prob7 (Red (-1))  @?= False
   ]
 
 test8 :: TestTree
