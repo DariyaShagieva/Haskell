@@ -27,7 +27,10 @@ prob7 cp = prob9 cp <= 255 && prob9 cp >=0
 -- Написать функцию, которая добавляет в соответствующее
 -- поле значения Color значение из ColorPart
 prob8 :: Color -> ColorPart -> Color
-prob8 = error "Implement me!"
+prob8 c cp = case cp of
+    (Red n) -> c {red = (red c) + n}
+    (Blue n) -> c {blue = (blue c) + n}
+    (Green n) -> c {green = (green c) + n}
 
 ------------------------------------------------------------
 -- PROBLEM #9
@@ -46,7 +49,10 @@ prob9 cp = case cp of
 -- Написать функцию, которая возвращает компонент Color, у
 -- которого наибольшее значение (если такой единственный)
 prob10 :: Color -> Maybe ColorPart
-prob10 = error "Implement me!"
+prob10 c | red c > green c && red c > blue c = Just  (Red (red c))
+         | green c > red c && green c > blue c = Just  (Green (green c))
+         | blue c > red c && blue c > green c = Just  (Blue (blue c))
+prob10 c = Nothing
 
 ------------------------------------------------------------
 -- PROBLEM #11
