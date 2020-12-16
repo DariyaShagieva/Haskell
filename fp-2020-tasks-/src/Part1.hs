@@ -51,7 +51,8 @@ prob2 n = if n `mod` 2 == 0
 --
 -- Для любой функции step и n == 1 ответом будет 0.
 prob3 :: (Integer -> Integer) -> Integer -> Integer
-prob3 step n = error "Implement me!"
+prob3 step 1 = 0
+
 
 
 ------------------------------------------------------------
@@ -84,4 +85,14 @@ prob4 n | n > 1 = prob4 (n - 2) + prob4 (n - 1)
 -- Числа n и k положительны и не превосходят 10^8.
 -- Число 1 не считается простым числом
 prob5 :: Integer -> Integer -> Bool
-prob5 = error "Implement me!"
+prob5 n k = [x | x <- (simpleDel n) , x >= k ] == []
+
+simpleDel :: Integer -> [Integer]
+simpleDel n = [x | x <- delit n, isSimple x ]
+
+
+isSimple :: Integer -> Bool
+isSimple n = delit n == [1,n]
+
+delit :: Integer -> [Integer]
+delit n = [x | x <- [1..n], mod n x == 0]
