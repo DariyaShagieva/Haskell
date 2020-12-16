@@ -5,7 +5,7 @@ module Part3 where
 --
 -- Проверить, является ли число N простым (1 <= N <= 10^9)
 prob18 :: Integer -> Bool
-prob18 = error "Implement me!"
+prob18 n = prob21 n == [1,n]
 
 ------------------------------------------------------------
 -- PROBLEM #19
@@ -23,7 +23,7 @@ prob19 = error "Implement me!"
 -- Совершенное число равно сумме своих делителей (меньших
 -- самого числа)
 prob20 :: Integer -> Bool
-prob20 = error "Implement me!"
+prob20 n = n ==  sum [x | x <- (prob21 n), x < n]
 
 ------------------------------------------------------------
 -- PROBLEM #21
@@ -31,7 +31,8 @@ prob20 = error "Implement me!"
 -- Вернуть список всех делителей числа N (1<=N<=10^10) в
 -- порядке возрастания
 prob21 :: Integer -> [Integer]
-prob21 = error "Implement me!"
+prob21 n = [x | x <- [1..n], mod n x == 0]
+
 
 ------------------------------------------------------------
 -- PROBLEM #22
@@ -50,7 +51,7 @@ prob22 = error "Implement me!"
 -- M > 0 и N > 0. Если M > N, то вернуть символы из W в
 -- обратном порядке. Нумерация символов с единицы.
 prob23 :: String -> Maybe String
-prob23 = error "Implement me!"
+prob23 str = error "Implement me!"
 
 ------------------------------------------------------------
 -- PROBLEM #24
