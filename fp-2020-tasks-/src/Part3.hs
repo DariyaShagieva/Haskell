@@ -23,7 +23,10 @@ prob19 = error "Implement me!"
 -- Совершенное число равно сумме своих делителей (меньших
 -- самого числа)
 prob20 :: Integer -> Bool
-prob20 n = n ==  sum [x | x <- (prob21 n), x < n]
+prob20 n = n ==  sumN n
+
+sumN :: Integer -> Integer
+sumN n = sum [x | x <- (prob21 n), x < n]
 
 ------------------------------------------------------------
 -- PROBLEM #21
@@ -77,7 +80,7 @@ prob25 = error "Implement me!"
 -- сумма делителей одного (без учёта самого числа) равна
 -- другому, и наоборот
 prob26 :: Integer -> Integer -> Bool
-prob26 = error "Implement me!"
+prob26 n m = sumN n == m && sumN m == n
 
 ------------------------------------------------------------
 -- PROBLEM #27
